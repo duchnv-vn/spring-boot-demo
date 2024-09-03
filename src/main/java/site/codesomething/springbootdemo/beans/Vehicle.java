@@ -6,7 +6,7 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class Vehicle {
-    private String name;
+    private String name = "default vehicle name";
 
     public String getName() {
         return name;
@@ -14,7 +14,7 @@ public class Vehicle {
 
     @PostConstruct
     public void initialize() {
-        this.name = "Name created after initialization";
+        System.out.println("Vehicle initialized");
     }
 
     @PreDestroy
