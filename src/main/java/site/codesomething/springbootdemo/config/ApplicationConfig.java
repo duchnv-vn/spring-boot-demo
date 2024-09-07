@@ -1,13 +1,16 @@
 package site.codesomething.springbootdemo.config;
 
 //import org.springframework.context.annotation.Bean;
+
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.EnableAspectJAutoProxy;
 //import site.codesomething.springbootdemo.beans.Person;
 //import site.codesomething.springbootdemo.beans.Vehicle;
 
 @Configuration
-@ComponentScan(basePackages = "site.codesomething.springbootdemo.beans")
+@ComponentScan(basePackages = {"site.codesomething.springbootdemo.beans", "site.codesomething.springbootdemo.aspects", "site.codesomething.springbootdemo.interfaces"})
+@EnableAspectJAutoProxy
 public class ApplicationConfig {
 //    @Bean
 //    public Vehicle vehicle() {

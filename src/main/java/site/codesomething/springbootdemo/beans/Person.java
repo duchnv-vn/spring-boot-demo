@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 import site.codesomething.springbootdemo.abstracts.Laptop;
+import site.codesomething.springbootdemo.interfaces.MyLoggerAspect;
 
 @Component
 public class Person {
@@ -20,6 +21,7 @@ public class Person {
         this.laptop = laptop;
     }
 
+    @MyLoggerAspect
     public String getName() {
         return name;
     }

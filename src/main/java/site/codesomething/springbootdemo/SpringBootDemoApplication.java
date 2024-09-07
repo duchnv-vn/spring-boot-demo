@@ -18,25 +18,27 @@ public class SpringBootDemoApplication {
         System.out.println("Springboot version: " + SpringBootVersion.getVersion());
 
         var context = SpringApplication.run(SpringBootDemoApplication.class, args);
-//        var vehicle = context.getBean("vehicle", Vehicle.class);
-//        System.out.println("Vehicle name is: " + vehicle.getName());
+        var vehicle = context.getBean("vehicle", Vehicle.class);
+        var vehicleName = vehicle.getName();
+//        System.out.println("Vehicle vehicleName is: " + vehicle.getName());
 
-//        var person = context.getBean(Person.class);
-//        System.out.println("Person name is: " + person.getName());
+        var person = context.getBean(Person.class);
+        var personName = person.getName();
+//        System.out.println("Person vehicleName is: " + person.getName());
 //        System.out.println("Person vehicle is: " + person.getVehicle().getName());
 
         context.close();
 
-        var context2 = new AnnotationConfigApplicationContext(ApplicationConfig.class);
+//        var context2 = new AnnotationConfigApplicationContext(ApplicationConfig.class);
 //        var vehicle2 = context2.getBean(Vehicle.class);
-//        System.out.println("Vehicle name is: " + vehicle2.getName());
+//        System.out.println("Vehicle vehicleName is: " + vehicle2.getName());
 
-        var person2 = context2.getBean(Person.class);
-        System.out.println("Person name is: " + person2.getName());
-        System.out.println("Person laptop is: " + person2.getLaptop().getBrand());
+//        var person2 = context2.getBean(Person.class);
+//        System.out.println("Person vehicleName is: " + person2.getName());
+//        System.out.println("Person laptop is: " + person2.getLaptop().getBrand());
 //        System.out.println("Person vehicle is: " + person2.getVehicle().getName());
 
-        context2.close();
+//        context2.close();
     }
 
     private static Supplier<Vehicle> vehicleSupplier() {
